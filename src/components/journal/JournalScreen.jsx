@@ -1,10 +1,20 @@
-import React from 'react'
+import React from 'react';
+import { Sidebar } from './Sidebar';
 
 export const JournalScreen = () => {
     return (
-        <div>
-            <h1>Journal Screen</h1>
-            <hr/>
+        <div className="Journal__main-content" >
+
+            <Sidebar />
+
+
+            <main>
+
+                <h1>Main Content</h1>
+
+            </main>
+
+
         </div>
     )
 }

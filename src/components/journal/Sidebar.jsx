@@ -7,12 +7,16 @@ export const Sidebar = () => {
     return (
         <aside className="jounal__sidebar" >
             <div className="journal__sidebar-navbar">
-                <h3 className="mt-5" >
-                    <i className="far fa-moon" ></i>
-                    <span> Joalrope</span>
-                </h3>
+                <div>
+                    <h3 className="mt-5" >
+                        <i className="far fa-moon" ></i>
+                        <span> Joalrope</span>
+                    </h3>
+                </div>
 
-                <button className="btn">Logout</button>
+                <div className="mt-5">
+                    <button className="btn btn-outline">Logout</button>
+                </div>
             </div>
 
             <div className="journal__new-entry" >

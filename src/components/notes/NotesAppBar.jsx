@@ -7,8 +7,8 @@ export const NotesAppBar = () => {
             <span>26 de agosto de 2020</span>
             
             <div>
-                <button className="btn">Imagen</button>
-                <button className="btn">Guardar</button>
+                <button className="btn btn-outline">Imagen</button>
+                <button className="btn btn-outline">Guardar</button>
             </div>
         </div>
     )

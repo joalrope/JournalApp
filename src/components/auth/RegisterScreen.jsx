@@ -65,49 +65,49 @@ export const RegisterScreen = () => {
                 }
 
                 <input
-                className="auth__input"
-                type="text"
-                placeholder="Nombre"
-                autoComplete="off"
-                name="name"
-                value={name}
-                onChange={handleInputChange}
+                    className="auth__input"
+                    type="text"
+                    placeholder="Nombre"
+                    autoComplete="off"
+                    name="name"
+                    value={name}
+                    onChange={handleInputChange}    
                 />
 
                 <input
-                className="auth__input"
-                type="text"
-                placeholder="email"
-                autoComplete="off"
-                name="email"
-                value={email}
-                onChange={handleInputChange}
+                    className="auth__input"
+                    type="text"
+                    placeholder="email"
+                    autoComplete="off"
+                    name="email"
+                    value={email}
+                    onChange={handleInputChange}
                 />
 
                 <input
-                className="auth__input"
-                type="password"
-                placeholder="password"
-                name="password"
-                value={password}
-                onChange={handleInputChange}
+                    className="auth__input"
+                    type="password"
+                    placeholder="password"
+                    name="password"
+                    value={password}
+                    onChange={handleInputChange}
                 />
 
                 <input
-                className="auth__input"
-                type="password"
-                placeholder="Confirmar password"
-                name="password2"
-                value={password2}
-                onChange={handleInputChange}
+                    className="auth__input"
+                    type="password"
+                    placeholder="Confirmar password"
+                    name="password2"
+                    value={password2}
+                    onChange={handleInputChange}
                 />
 
                 <button className="btn btn-primary btn-block mb-5 mt-1" type="submit">
-                Registar
+                    Registar
                 </button>
 
                 <Link to="/auth/login" className="link">
-                <p className="auth__p-social-network">Ya esta registrado?</p>
+                    <p className="auth__p-social-network">Ya esta registrado?</p>
                 </Link>
             </form>
         </>

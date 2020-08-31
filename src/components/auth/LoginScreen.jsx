@@ -4,20 +4,42 @@ import { Link } from "react-router-dom";
 
 import { useForm } from "../../hokks/useForm";
 import { startLoginEmailPassword, startLoginAuthGoogle } from "../../actions/auth";
+import validator from "validator";
+import { setError, clearError } from "../../actions/ui";
 
 export const LoginScreen = () => {
   
     const dispatch = useDispatch();
 
     const [{ email, password }, handleInputChange] = useForm({
-        email: "joalrope@gmail.com",
-        password: "123456",
+        email: "joalrope@hotmail.com",
+        password: "12345678",
     });
 
     const handleLogin = (e) => {
         e.preventDefault();
-        dispatch(startLoginEmailPassword(email, password));
-    };
+
+        if (isFormValid()){
+            dispatch(startLoginEmailPassword(email, password));
+        }
+
+    }
+
+
+    const isFormValid = () => {
+
+        if (!validator.isEmail(email) ) {
+            dispatch(setError('El email no es valido'));
+            return false;
+        } else if (password.length < 8) {
+            dispatch(setError('Las contraseña debe tener al menos 8 caracteres'));
+            return false;
+        }
+        
+        dispatch(clearError());
+        return true;
+    }
+
 
     const startLoginGoogle = () => {
         dispatch(startLoginAuthGoogle());

@@ -5,6 +5,7 @@ import validator from "validator";
 
 import { useForm } from "../../hokks/useForm";
 import { setError, clearError } from "../../actions/ui";
+import { startRegisterEmailPassword } from "../../actions/auth";
 
 
 export const RegisterScreen = () => {
@@ -14,7 +15,7 @@ export const RegisterScreen = () => {
 
     const [{ name, email, password, password2 }, handleInputChange] = useForm({
         name: "Jose Rodriguez",
-        email: "joalrope@gmail.com",
+        email: "joalrope@hotmail.com",
         password: "12345678",
         password2: "12345678"
     });
@@ -23,6 +24,8 @@ export const RegisterScreen = () => {
         e.preventDefault();
 
         if (isFormValid()){
+
+            dispatch(startRegisterEmailPassword(email, password, name));
             
         }
 

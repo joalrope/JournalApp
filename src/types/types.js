@@ -9,5 +9,9 @@ export const types = {
     uiSetError: '[UI] Set Error',
     uiClearError: '[UI] Clear Error',
 
+    uiStartLoading: '[UI] Start loading',
+    uiFinishLoading: '[UI] Finish loading',
+
+
 
 }

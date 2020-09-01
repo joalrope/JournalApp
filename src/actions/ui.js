@@ -12,11 +12,11 @@ export const clearError = () => ({
 })
 
 
-export const StartLoading = () => ({
+export const startLoading = () => ({
     type: types.uiStartLoading
 })
 
 
-export const FinishLoading = () => ({
+export const finishLoading = () => ({
     type: types.uiFinishLoading
 })

@@ -11,7 +11,7 @@ import { setError, clearError } from "../../actions/ui";
 export const LoginScreen = () => {
   
     const dispatch = useDispatch();
-    const {loading} = useSelector( state => state.UI );
+    const {loading} = useSelector( state => state.ui );
 
     const [{ email, password }, handleInputChange] = useForm({
         email: "joalrope@hotmail.com",

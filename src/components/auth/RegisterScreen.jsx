@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import validator from "validator";
 
-import { useForm } from "../../hokks/useForm";
+import { useForm } from "../../hooks/useForm";
 import { setError, clearError } from "../../actions/ui";
 import { startRegisterEmailPassword } from "../../actions/auth";
 

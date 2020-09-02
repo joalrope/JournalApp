@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import validator from "validator";
 
-import { useForm } from "../../hokks/useForm";
+import { useForm } from "../../hooks/useForm";
 import { startLoginEmailPassword, startLoginAuthGoogle } from "../../actions/auth";
 import { setError, clearError } from "../../actions/ui";
 

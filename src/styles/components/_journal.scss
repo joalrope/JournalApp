@@ -41,10 +41,20 @@
     transition: color .3s ease;
 
     &:hover {
-        color: scale-color(white, $lightness: -20%);;   
+        color: scale-color($dark-grey, $lightness: 30%);;   
     }
-
 }
+
+
+.fa-calendar-plus {
+    color: $primary;
+
+    &:hover {
+        color: scale-color($dark-grey, $lightness: 30%);;   
+    }
+}
+
+
 
 .journal__entries {
     flex: 1 1 auto;

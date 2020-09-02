@@ -12,7 +12,6 @@ export const Sidebar = () => {
     const {name} = useSelector( state => state.auth );
 
     const handleLogout = () => {
-
         dispatch(startLogout());
     }
 
@@ -40,7 +39,7 @@ export const Sidebar = () => {
                 onClick= { handleAddNew }
             >
                 <i className="far fa-calendar-plus fa-5x" ></i>
-                <p className="mt-5">New Entry</p>
+                <p className="mt-5">Nueva Entrada</p>
             </div>
 
             <JournalEntries />

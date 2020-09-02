@@ -13,7 +13,7 @@ export const types = {
     uiFinishLoading: '[UI] Finish loading',
 
     notesAddNew: '[Notes] New note',
-    notesAcive: '[Notes] Set active note',
+    notesActive: '[Notes] Set active note',
     notesLoad: '[Notes] Load notes',
     notesUpdate: '[Notes] Updated note',
     notesImgUpdate: '[Notes] Updated image url',

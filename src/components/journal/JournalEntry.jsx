@@ -11,12 +11,12 @@ export const JournalEntry = ({id, body, date, title, url }) => {
 
     const handleEntryClick = () => {
 
-        dispatch(activeNote(id, {
-            title,
-            body,
-            url,
-            date
-        }));
+        dispatch(
+            activeNote(id, {
+                title, body, url, date
+            }
+            )
+        );
     }
 
     return (

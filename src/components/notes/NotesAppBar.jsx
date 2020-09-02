@@ -1,24 +1,23 @@
 import React from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import moment from 'moment';
+import { startSaveNote } from '../../actions/notes';
 
 
 export const NotesAppBar = () => {
 
-    // const {id, title, body, url, date} = useSelector( state => state.notes.active );
-    const {date} = useSelector( state => state.notes.active );
-    
-    const noteDate = moment(date).format('DD [de] MMMM [de] YYYY');
+    const dispatch = useDispatch();
+    const {active} = useSelector( state => state.notes );
 
-    // const dispatch = useDispatch();
+    moment.locale('es');
 
-    // dispatch();
+    const noteDate = moment(active.date).format('DD [de] MMMM [de] YYYY');
 
-    // const handleSaveNote = () => {
+    const handleSaveNote = () => {
+        dispatch(startSaveNote(active));
+    }
 
-    // };
 
     return (
         <div className="notes__appbar">
@@ -29,7 +28,7 @@ export const NotesAppBar = () => {
                 <button className="btn btn-outline">Imagen</button>
                 <button
                     className="btn btn-outline"
-                    // onClick= { handleSaveNote }
+                    onClick= { handleSaveNote }
                 >
                     Guardar
                 </button>

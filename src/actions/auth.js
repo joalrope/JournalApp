@@ -13,14 +13,12 @@ export const startLoginEmailPassword = (email, password) => {
 
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then( async({ user }) => {
-                
                 dispatch(login(user.uid, user.displayName));
                 dispatch(finishLoading());
             })
             .catch ( e => {
-                console.log(e);
                 dispatch(finishLoading());
-                Swal.fire('Error', e.message, 'error');
+                Swal.fire('Error', e.message, 'error');  // Cuadros de Alert mediante sweetalert2
             });
 
     }
@@ -40,8 +38,8 @@ export const startRegisterEmailPassword = (email, password, name) => {
                     login(user.uid, user.displayName)
                 )
             })
-            .catch ( e => {
-                console.log(e);
+            .catch ( err => {
+                console.log(err);
             })
     }
 

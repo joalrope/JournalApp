@@ -57,11 +57,12 @@ export const startSaveNote = (note) => {
         if (!noteToFirestore.url) {
             delete noteToFirestore.url 
         }
-
         delete noteToFirestore.id;
+
         await db.doc(`${uid}/journal/notes/${note.id}`).update(noteToFirestore)
 
         dispatch(refreshNote(note.id, noteToFirestore ));
+
     }
 }
 
@@ -70,10 +71,7 @@ export const refreshNote = (id, note) => ({
     type: types.notesUpdated,
     payload: {
         id,
-        note: {
-            id,
-            ...note
-        }
+        note
     }
 
 })

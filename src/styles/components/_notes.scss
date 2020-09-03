@@ -47,7 +47,14 @@
 .notes__image {
 
     & img {
+        margin-top: 10px;
         box-shadow: 5px 5px $dark-grey;
+        border: 1px solid $dark-grey;
         height: 100px;
+        width: 100px;
+        min-Width: 100px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
     }
 }

@@ -34,7 +34,7 @@
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     margin-top: 30px;
     width: 100%;
 
@@ -69,11 +69,25 @@
     display: flex;
     margin: 10px;
     overflow: hidden;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: space-around;
+    align-items: center;
+
+
 }
 
 .journal__entry-picture {
-    height: 75px;
-    width: 75px;
+    width: 50px;
+    height: 50px;
+    margin: 2px;
+    border: 1px solid $light-grey;
+    min-Width: 50px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
 }
 
 .journal__entry-body {
@@ -84,6 +98,7 @@
     font-weight: bold;
 }
 .journal__entry-content {
+    vertical-align: top;
     font-size: 10px;
 
 }
@@ -91,7 +106,6 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     padding: 5px;
     
     & span {

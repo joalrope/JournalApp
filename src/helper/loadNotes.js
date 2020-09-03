@@ -3,7 +3,7 @@ import { db } from '../firebase/firebaseConfig';
 
 export const loadNotes = async (uid) => {
 
-    const notesInDB = await db.collection(`${uid}/journal/notes`).get()    
+    const notesInDB = await db.collection(`${uid}/journal/notes`).orderBy('date').get()    
     const notes = [];
 
     notesInDB.forEach( note => {

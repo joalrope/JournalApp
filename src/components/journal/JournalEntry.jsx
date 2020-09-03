@@ -9,6 +9,10 @@ export const JournalEntry = ({id, body, date, title, url }) => {
 
     const noteDate = moment(date);
 
+    if (!url) {
+        url = 'favicon.png'
+    }
+
     const handleEntryClick = () => {
 
         dispatch(
@@ -29,8 +33,6 @@ export const JournalEntry = ({id, body, date, title, url }) => {
                     <div 
                         className="journal__entry-picture"
                         style={{
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center' ,
                             backgroundImage:`url(${url})`
                         }}
                     ></div>

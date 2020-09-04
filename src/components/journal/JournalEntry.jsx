@@ -1,11 +1,15 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import moment from 'moment';
+import 'moment/locale/es';
+
 import { activeNote } from '../../actions/notes';
 
 export const JournalEntry = ({id, body, date, title, url }) => {
 
     const dispatch = useDispatch();
+
+    moment.locale('es');
 
     const noteDate = moment(date);
 
@@ -40,11 +44,17 @@ export const JournalEntry = ({id, body, date, title, url }) => {
             
             <div className="journal__entry-body">
                 <p className="journal__entry-title">{title}</p>
-                <p className="journal__entry-content">{body} </p>
+                <p className="journal__entry-content">
+                    {
+                        (body.length >= 80 )
+                            ? `${body.substring(0, 80)}...`
+                            : body
+                    }                    
+                </p>
             </div>
 
             <div className="journal__entry-date-box">
-                <span>{noteDate.format('dddd')}</span>
+                <span>{noteDate.format('ddd')}</span>
                 <h4>{noteDate.format('D')}</h4>
             </div>
         </div>

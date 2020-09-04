@@ -30,35 +30,39 @@ export const NoteScreen = () => {
 
     return (
         <div className="notes__main-content">
-        <NotesAppBar />
+            <NotesAppBar />
 
-        <div className="notes__content">
-            <input
-            type="text"
-            placeholder="algún título asombroso"
-            className="notes__title-input"
-            autoComplete="off"
-            name= "title"
-            value= {title}
-            onChange= {handleInputChange}
-            />
-
-            <textarea
-            placeholder="Que paso Hoy?"
-            className="notes__textarea"
-            name= "body"
-            value= {body}
-            onChange= {handleInputChange}
-            ></textarea>
-            {
-                note.url
-                 && (
-                    <div className="notes__image">
-                        <img src= {note.url} alt="painting"/>
-                    </div>
-                    )
-            }
-        </div>
+            <div className="notes__edit-content">
+                {
+                    note.url
+                    && (
+                        <div className="notes__image">
+                            <img src= {note.url} alt="painting"/>
+                        </div>
+                        )
+                }
+    
+                <div className="notes__content">
+                    
+                    <input
+                        type="text"
+                        placeholder="algún título asombroso"
+                        className="notes__title-input"
+                        autoComplete="off"
+                        name= "title"
+                        value= {title}
+                        onChange= {handleInputChange}
+                    />
+    
+                    <textarea
+                        placeholder="Que paso Hoy?"
+                        className="notes__textarea"
+                        name= "body"
+                        value= {body}
+                        onChange= {handleInputChange}
+                    ></textarea>
+                </div>
+            </div>
         </div>
     );
 };

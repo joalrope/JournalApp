@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2';
+
 import { db } from '../firebase/firebaseConfig';
 import { types } from '../types/types';
 import { loadNotes } from '../helper/loadNotes';
@@ -15,9 +17,14 @@ export const StartNewNote = () => {
             date: new Date().getTime()
         }
 
-        const doc = await db.collection(`${uid}/journal/notes`).add(newNote);
-
-        dispatch(activeNote(doc.id, newNote));
+        try {
+            const doc = await db.collection(`${uid}/journal/notes`).add(newNote);
+    
+            dispatch(activeNote(doc.id, newNote));
+            dispatch(addNewNote( doc.id, newNote ) );
+        } catch (error) {
+            Swal.fire('No se pudo agregar la nueva entrada', 'Journal App', 'error');
+        }
     }
 }
 
@@ -29,6 +36,13 @@ export const activeNote = (id, note) => ({
         ...note
     }    
 });
+
+export const addNewNote = ( id, note ) => ({
+    type: types.notesAddNew,
+    payload: {
+        id, ...note
+    }
+})
 
 
 export const startLoadingNotes = (uid) => {
@@ -59,9 +73,16 @@ export const startSaveNote = (note) => {
         }
         delete noteToFirestore.id;
 
-        await db.doc(`${uid}/journal/notes/${note.id}`).update(noteToFirestore)
+        try {
+            await db.doc(`${uid}/journal/notes/${note.id}`).update(noteToFirestore)
+            dispatch(refreshNote(note.id, note ));
 
-        dispatch(refreshNote(note.id, noteToFirestore ));
+            Swal.fire(`Nota: ${note.title} salvada`, 'Journal App', 'success');
+        } catch (err) {
+            Swal.fire(`No se Pudo Guardar la Nota: ${note.title}`, 'Journal App' ,'error');
+        }
+        
+
 
     }
 }

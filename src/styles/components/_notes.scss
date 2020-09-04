@@ -24,17 +24,6 @@
 
 }
 
-.notes__edit-content {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    align-content: space-around;
-
-    flex: 0 1 100%;
-
-}
-
 .notes__title-input, .notes__textarea {
     border: none;
     color: $dark-grey;
@@ -49,7 +38,6 @@
     font-size: 25px;
     font-weight: 700;
     margin-bottom: 10px;
-    width: 100%;
 }
 
 .notes__textarea {
@@ -60,7 +48,6 @@
 }
 
 .notes__image {
-    float: left;
 
     & img {
         margin: 10px;

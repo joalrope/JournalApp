@@ -30,7 +30,7 @@ export const Sidebar = () => {
                 </div>
 
                 <div className="mt-5">
-                    <button className="btn btn-outline" onClick= { handleLogout } >Logout</button>
+                    <button className="btn btn-outline" onClick= { handleLogout } >Cerrar Sesión</button>
                 </div>
             </div>
 

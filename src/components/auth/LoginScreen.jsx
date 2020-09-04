@@ -50,7 +50,7 @@ export const LoginScreen = () => {
     
     return (
         <div>
-          <h3 className="auth__title mb-5 animate__animated animate__fadeIn">
+          <h3 className="auth__title mb-5 animate__animated animate__fadeIn animate__faster">
               Ingresar
           </h3>
             <form onSubmit={handleLogin}>

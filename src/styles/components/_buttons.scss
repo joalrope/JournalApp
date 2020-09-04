@@ -36,6 +36,20 @@
     }
 }
 
+.btn-danger {
+    background-color: scale-color(red, $lightness: 10%, $alpha: 0.3);
+    border: 1px solid red;
+    border-radius: 4px;
+
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: scale-color(red, $lightness: -30%, $alpha: 1);
+        border: 1px solid red;
+    }
+
+}
+
 .btn-outline {
     border: 1px solid scale-color(white, $lightness: -5%);
     border-radius: 4px;

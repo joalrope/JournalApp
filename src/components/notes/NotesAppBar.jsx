@@ -12,7 +12,7 @@ export const NotesAppBar = () => {
 
     moment.locale('es');
 
-    const noteDate = moment(active.date).format('DD [de] MMMM [de] YYYY');
+    const noteDate = moment(active.date).format('dddd[,] DD [de] MMMM [de] YYYY');
 
     const handleSaveNote = () => {
         dispatch(startSaveNote(active));
@@ -47,7 +47,7 @@ export const NotesAppBar = () => {
                     className="btn btn-outline"
                     onClick= {handlePictureClick}
                 >
-                    Imagen
+                    Seleccionar Imagen ...
                 </button>
                 
                 <button

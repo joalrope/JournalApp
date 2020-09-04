@@ -18,18 +18,16 @@ export const JournalEntry = ({id, body, date, title, url }) => {
     }
 
     const handleEntryClick = () => {
-
         dispatch(
             activeNote(id, {
                 title, body, url, date
-            }
-            )
+            })
         );
     }
 
     return (
         <div
-            className="journal__entry pointer"
+            className="journal__entry pointer animate__animated animate__fadeIn animate__slow 1s"
             onClick= { handleEntryClick }
         >
            {
